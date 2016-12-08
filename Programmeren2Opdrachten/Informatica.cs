@@ -13,7 +13,7 @@ namespace Programmeren2Opdrachten
     public class Course
     {
         public int VakNr { get; set; }
-        public string Naam { get; set; }
+        public string Name { get; set; }
         public string Teacher { get; set; }
     }
 
@@ -74,7 +74,7 @@ namespace Programmeren2Opdrachten
             List<decimal> scores = new List<decimal>();
             foreach (var exam in exams) //doorlopen van alle scores
             {
-                if (exam.Course.Naam == vakNaam)
+                if (exam.Course.Name == vakNaam)
                 {
                     scores.Add(exam.Score);
                 }
