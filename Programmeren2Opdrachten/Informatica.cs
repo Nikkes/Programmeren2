@@ -1,9 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Programmeren2Opdrachten
 {
@@ -62,6 +59,29 @@ namespace Programmeren2Opdrachten
             new Exam() { Student = katrijn,   Course = se,        Score = 8 },
             new Exam() { Student = katrijn,   Course = se,        Score = 9.5m }
         };
+
+        //Voorbeeld:
+        //Geef alle scores gegeven een vaknaam. 
+        [Test]
+        public static void TestGetScoresByCourse()
+        {
+            Assert.AreEqual(new List<decimal>() {3, 5, 6, 8}, GetScores("Wiskunde"));
+            Assert.AreEqual(new List<decimal>() {9, 5, 6}, GetScores("C#"));
+        }
+
+        public static List<decimal> GetScores(string vakNaam)
+        {
+            List<decimal> scores = new List<decimal>();
+            foreach (var exam in exams) //doorlopen van alle scores
+            {
+                if (exam.Course.Naam == vakNaam)
+                {
+                    scores.Add(exam.Score);
+                }
+            }
+            return scores;
+        }
+           
 
         //Geef alle scores aan de hand van de naam de van de desbetreffende student 
         [Test]
@@ -125,7 +145,7 @@ namespace Programmeren2Opdrachten
             public decimal Score { get; set; }
         }
 
-        public static List<StudentAverage> GetAverageScoreByStudent(string name)
+        public static StudentAverage GetAverageScoreByStudent(string name)
         {
             throw new NotImplementedException();
         }
