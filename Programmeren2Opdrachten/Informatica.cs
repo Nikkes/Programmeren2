@@ -71,7 +71,6 @@ namespace Programmeren2Opdrachten
 
         public static List<decimal> GetScores(string vakNaam)
         {
-            vakNaam = vakNaam.ToLower();
             List<decimal> scores = new List<decimal>();
             foreach (var exam in exams) //doorlopen van alle scores
             {
