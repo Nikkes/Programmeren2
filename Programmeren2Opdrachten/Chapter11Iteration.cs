@@ -76,7 +76,7 @@ namespace Programmeren2Opdrachten
         [Test]
         public void TestExercise6()
         {
-            Programmeren2Tests.Chapter11Test.TestExercise6(Programmeren2Tests.Chapter11Test.Exercise6);
+            Programmeren2Tests.Chapter11Test.TestExercise6(Exercise6);
         }
 
         public int Exercise6(string[] xs)
@@ -112,7 +112,6 @@ namespace Programmeren2Opdrachten
                 approx = better;
             }
         }
-
 
         //Trace the execution of the last version of generateTable and make yourself more 
         //comfortable with single stepping, and debugging.

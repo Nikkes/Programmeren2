@@ -38,8 +38,8 @@ namespace Programmeren2Opdrachten
         private static Course cSharp =  new Course() { VakNr = 1, Name = "C#", Teacher = "Joris" };
         private static Course math =    new Course() { VakNr = 2, Name = "Wiskunde", Teacher = "Jos" };
         private static Course coo =     new Course() { VakNr = 3, Name = "Computer Organisation", Teacher = "Sibbele" };
-        private static Course se =      new Course() { VakNr = 3, Name = "Software Engineering", Teacher = "David" };
-        private static Course python  = new Course() { VakNr = 3, Name = "Python", Teacher = "Wouter" };
+        private static Course se =      new Course() { VakNr = 4, Name = "Software Engineering", Teacher = "David" };
+        private static Course python  = new Course() { VakNr = 5, Name = "Python", Teacher = "Wouter" };
 
         private static List<Course> courses = new List<Course>() {
             cSharp, math, coo, se, python
@@ -96,7 +96,7 @@ namespace Programmeren2Opdrachten
             throw new NotImplementedException();
         }
 
-        //Bepaal aan de hand van de naam de beste score van de desbetreffende student 
+        //Bepaal het hoogste behaalde resultaat van een student, gebruik als argument de student naam
         [Test]
         public static void TestGetHighestScoreByStudentName()
         {
@@ -144,6 +144,24 @@ namespace Programmeren2Opdrachten
         {
             public String Name { get; set; }
             public decimal Score { get; set; }
+
+            public override bool Equals(object obj)
+            {
+                if (obj is StudentAverage)
+                {
+                    StudentAverage s = (StudentAverage)obj;
+                    return Name == s.Name && Score == s.Score;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            public override int GetHashCode()
+            {
+                return Name.GetHashCode() + Score.GetHashCode();
+            }
         }
 
         public static StudentAverage GetAverageScoreByStudent(string name)
