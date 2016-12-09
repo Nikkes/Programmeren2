@@ -74,7 +74,7 @@ namespace Programmeren2Opdrachten
             List<decimal> scores = new List<decimal>();
             foreach (var exam in exams) //doorlopen van alle scores
             {
-                if (exam.Course.Name.ToLower() == vakNaam)
+                if (exam.Course.Name.ToLower() == vakNaam.ToLower())
                 {
                     scores.Add(exam.Score);
                 }
