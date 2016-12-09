@@ -74,6 +74,7 @@ namespace Programmeren2Opdrachten
             List<decimal> scores = new List<decimal>();
             foreach (var exam in exams) //doorlopen van alle scores
             {
+                //tolower kan je ook weglaten, wordt het vergelijken hoofdletter gevoelig. 
                 if (exam.Course.Name.ToLower() == vakNaam.ToLower())
                 {
                     scores.Add(exam.Score);
