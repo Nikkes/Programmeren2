@@ -177,7 +177,7 @@ namespace Programmeren2Opdrachten
             //schrijf je eigen test cases
         }
         
-        public int NumberOfResits()
+        public static int NumberOfResits()
         {
             throw new NotImplementedException();
         }
